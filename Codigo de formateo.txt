@@ -1,0 +1,135 @@
+if(itemFactura.size() >0 ){
+File f=new File('C:\\Users\\00793\\Documents\\factura.html')
+String eol="\n"
+
+
+String head= "<!DOCTYPE html> "+ eol +
+"<html lang=\"es\">"+ eol +
+"<head>"+ eol +
+	"<meta charset=\"UTF-8\">"+ eol +
+	"<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"+ eol +
+	"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"+ eol +
+	"<title>Document</title>"+ eol +
+"</head>"
+f.append(head)
+
+String openBody= "<body>" + eol
+f.append(openBody)
+
+String ourCompanyInfo="<header>"+ eol +
+"<section name=\"Informacion Compañia\" >"+ eol +
+ " <table >"+ eol +
+"    <tr>"+ eol +
+ "     <th> <img src=\"https://cdn.icon-icons.com/icons2/390/PNG/512/wolf-howl_38004.png\" width=\"50\" height=\"60\"  style=\"margin-left: 10px;vertical-align:10px;\" ></th>" + eol +
+ "     <th><h1>WolfHarrterr Colombia</h1> <h5>Servicios de Consultoria Profesional </h5> </th>" + eol +
+ "    </tr>" + eol +
+"    </table>" + eol +
+"    <h4 style=\"margin-left: 10px\"> Dirección: Carrera 56 # 152b - 71  Bogotá, Colombia</h4>" + eol +
+ " </section>" + eol +
+"</header>" + eol
+f.append(ourCompanyInfo)
+
+
+String customerInfo= "<section name=\"informacion Cliente\">"+ eol +
+  "<br>"+  eol +
+  "<p>"+  eol +
+	"<h4  style=\"margin-left: 800px; \">Cliente: Empresa 1 </h4>"+  eol +
+	"<h4  style=\"margin-left: 800px;\" >NIT: 000909090909090009090 </h4>"+  eol +
+	"<h4  style=\"margin-left: 800px;\">Ciudad: Bogotá, Colombia </h4>"+  eol +
+  "</p>"+  eol +
+"</section>"
+
+f.append(customerInfo)
+
+
+
+
+String factura="<section name=\"Factura\">" +eol +
+"<br> <h1 style=\" text-align: center;\"> Factura de servicios profesionales </h1><br>" + eol +
+ "<h4 style=\"margin-left: 100px;\"> Estimado cliente, a continuación encontrará la factura por nuestros servicios profesionales </h4>"+ eol +
+ "<table style=\"background-color: #D6EEEE; border: 1px solid black; margin-left: auto; margin-right: auto; width: 80%\">"+ eol +
+ "<tr style=\"background-color: #c28618; border: 1px solid black;\">"+ eol +
+	"<th>Servicio</th>"+ eol +
+	"<th>Descripción</th>"+ eol +
+	"<th>Cantidad</th>"+ eol +
+	"<th>Precio</th>"+ eol +
+"</tr>" +eol
+
+
+
+f.append(factura)
+f.append("\n")
+
+
+
+
+
+for (objKey in itemFactura) {
+	String item=  objKey.item
+	String descripcion= objKey.descripcion+" "
+	String precioSinIva = objKey.precioSinIva+" "
+	String precioConIva = objKey.precioConIva+""
+	String cantidad = objKey.cantidad+""
+
+	String itemFactura=	"<tr>"+ eol +
+		   "<td>"+ item + "</td>"+ eol +
+		   "<td>"+ descripcion +"</td>"+ eol +
+		   "<td>"+precioConIva+"</td>"+ eol +
+		   "<td>"+cantidad+"</td>"+ eol +
+		   "</tr>" + eol
+	
+	f.append(itemFactura)
+	f.append("\n")
+ }
+ 
+ f.append("</table>" + eol)
+ f.append("</section>" + eol)
+ 
+ 
+ 
+ 
+ String totalFactura="<section name=\"firma\">"+ eol+
+ "<br>"+  eol+
+ "<h3 style=\"margin-left: 100px\">Cordialmente</h3>"+  eol+
+ " <br>"+  eol+
+ "<br>"+ eol+
+ " <h4 style=\"margin-left: 100px\">_________________________</h4>"+  eol+
+ "<h4 style=\"margin-left: 100px\">Rafael Alexander Reyes Corredor</h4>"+  eol+
+ "<h4 style=\"margin-left: 100px\">c.c. 1032406353</h4>"+ eol+
+ "<h4 style=\"margin-left: 100px\">Gerente General</h4>"+  eol+
+ "</section>"
+ 
+ 
+ f.append(totalFactura)
+ 
+ 
+ 
+ String closeBody="</body>"
+ 
+ f.append(closeBody)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}
+
